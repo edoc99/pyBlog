@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
 
+app_name = 'articles'
 
 urlpatterns = [
-    path('', views.article_list),
+    path('', views.article_list, name="list"),
     # named capturing group
-    path('<slug:slug>/', views.article_detail),
+    path('<slug:slug>/', views.article_detail, name="detail"),
 ]
